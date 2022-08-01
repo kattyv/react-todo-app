@@ -1,0 +1,227 @@
+/*  TASKs   */
+.tasks {
+    width: 100%;
+}
+.tasks h2 {
+    width: 100%;
+}
+.task-list {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}
+/* Card design */
+.card {
+    flex: 0 1 100%;
+    position: relative;
+    margin: 10px;
+    padding: 10px 10px 40px 20px;
+    background-color: #fff;
+    color: #202020;
+    box-shadow: inset 10px 0 0 #95a5a6;
+}
+@media screen and (min-width: 640px){
+    .card {
+        max-width: calc(50% - 20px);
+    }   
+}
+@media screen and (min-width: 960px){
+    .card{
+        max-width: calc(33% - 20px); 
+    }   
+}
+.card header {
+    position: relative;
+    margin: -10px -10px 10px -20px;
+    padding: 10px 0 0 20px;
+    background-color: #ecf0f1;
+    box-shadow: inset 10px 0 0 #7f8c8d;
+}
+.card header h3 {
+    font-size: 1.2rem;
+    margin: 0;
+    font-weight: 400;
+    line-height: 1;
+}
+.card .desc {
+    white-space: pre-wrap;
+}
+.card header small {
+    font-weight: 400;
+    color: #444;
+}
+.card header button {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+}
+.marker, 
+.marker::after {
+    display: inline-block;
+    border-radius: 50%;
+}
+.marker {
+    position: relative;
+    width: 30px;
+    height: 30px;
+    background: linear-gradient(#7f8c8d, #95a5a6);
+}
+.marker::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 14px;
+    height: 14px;
+    background: #ecf0f1;
+    transform: translate(-50%, -50%);
+}
+
+.card.pr-m {
+    box-shadow: inset 10px 0 0 #f1c408;
+}
+.card.pr-m header {
+    box-shadow: inset 10px 0 0 #f39c12;
+}
+.card.pr-m .marker {
+    background: linear-gradient(#f39c12, #f1c408);
+}
+.card.pr-m header .t-color {
+    color: #f1c408;
+}
+.card.pr-h {
+    box-shadow: inset 10px 0 0 #e74c3c;
+}
+.card.pr-h header {
+    box-shadow: inset 10px 0 0 #c0392b;
+}
+.card.pr-h .marker {
+    background: linear-gradient(#c0392b, #e74c3c);
+}
+.card.pr-h header .t-color {
+    color: #e74c3c;
+}
+.card.completed {
+    box-shadow: inset 10px 0 0 #238823;
+    transition: all .2s ease-in-out;
+}
+.card.completed header {
+    box-shadow: inset 10px 0 0 #007000;
+    transition: all .2s ease-in-out;
+}
+.card.completed .marker {
+    background: linear-gradient(#007000, #238823);
+    transition: all .2s ease-in-out;
+}
+.card.completed footer .t-color {
+    color: #238823;
+}
+.card footer {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    padding: 5px 5px 5px 20px;
+    color: #444;
+    font-weight: 400;
+    text-align: right;
+}
+.card footer small {
+    float: left;
+    padding-top: 12px;
+}
+.ico {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    vertical-align: middle;
+}
+/* Add Task */
+.btn-add {
+    position: fixed;
+    left: 5px;
+    top: 50%;
+    width: 36px;
+    height: 36px;
+    padding: 10px;
+    border: 1px solid #fff;
+    background: transparent;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+.btn-add:hover {
+    background: #202020;
+}
+.btn-add span,
+.btn-add span::after {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background: #fff;
+    transition: all .2s ease-in-out;
+}
+.btn-add span::after {
+    content: '';
+    transform: rotate(90deg);
+}
+.btn-add.open span {
+    transform: rotate(45deg);
+    transform-origin: right bottom;
+}
+.btn-add.open span::after {
+    transform: rotate(-90deg);
+    transform-origin: right top;
+}
+.task-add {
+    position: fixed;
+    top: 70px;
+    left: 50px;
+    right: 20px;
+    bottom: 30px;
+    z-index: 1000;
+    height: auto;
+    padding: 40px;
+    background: #ecf0f1;
+    color: #202020;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    transform: translateX(110%);
+    transition: all .3s ease-in-out;
+}
+.task-add.open {
+    transform: translateX(0);
+}
+.task-add .btn-toggle {
+    position: fixed;
+    top: 0;
+    right: 0;
+}
+.task-add h2 {
+    margin-bottom: 20px;
+}
+.task-add form {
+    width: 100%;
+    max-width: 400px;
+}
+.task-add form label {
+    margin-top: 20px;
+    margin-bottom: 5px;
+}
+.task-add form input, 
+.task-add form select, 
+.task-add form textarea {
+    width: 100%;
+}
+.task-add form button {
+    width: 100%;
+    margin-top: 20px;
+}
+@media screen and (min-width: 640px){
+    .task-add form button {
+        width: 50%;
+    }  
+}

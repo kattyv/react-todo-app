@@ -1,0 +1,288 @@
+/* 01. Global Styles for the app */
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* 01-01. Typography */
+html {font-size: 100%;} /*16px*/
+
+body {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  line-height: 1.5;
+  color: #222;
+  background: #222 url('../assets/img/bg.jpg') no-repeat top center;
+  background-size: cover;
+}
+
+p {margin-bottom: .5rem;}
+
+h1, h2, h3, h4, h5 {
+  margin: .5rem 0;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  line-height: 1.2;
+}
+h1 {
+  margin-top: 0;
+  font-size: 1.802rem;
+}
+h2 {font-size: 1.602rem;}
+h3 {font-size: 1.424rem;}
+h4 {font-size: 1.266rem;}
+h5 {font-size: 1.125rem;}
+small, .text_small {font-size: 0.889rem;}
+
+/* for small screens =====
+h1, h2, h3, h4, h5 {
+  margin: 3rem 0 1.38rem;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  line-height: 1.3;
+}
+
+h1 {
+  margin-top: 0;
+  font-size: 1.383rem;
+}
+
+h2 {font-size: 1.296rem;}
+
+h3 {font-size: 1.215rem;}
+
+h4 {font-size: 1.138rem;}
+
+h5 {font-size: 1.067rem;}
+
+small, .text_small {font-size: 0.937rem;}
+*/
+/* 01-02: Common page elements */
+a {
+    color: inherit;
+    text-decoration: none;
+}
+a:hover{
+    color: #ffa101;
+}
+.btn {
+    padding: 6px 12px;
+    border: 2px solid transparent;
+    border-radius: 3px;
+    background-color: transparent;
+    cursor: pointer;
+    font-weight: 400;
+    letter-spacing: 0.04em;
+}
+.btn-nostyle {
+    padding: 0;
+}
+.btn-primary {
+    border-color: #ffa101;
+    background-color: #ffa101;
+    color: #fff;
+}
+.btn-default {
+    border-color: #53dee5;
+    background-color: #315258;
+    color: #fff;
+}
+.btn-outline {
+    background-color: transparent;
+}
+.btn-small {
+    font-size: 0.9rem;
+    padding: 4px 12px;
+}
+.btn-ico{
+    width: 40px;
+    height: 40px;
+    vertical-align: middle;
+    margin: 0;
+    padding: 0;
+    border-radius: 50%;
+}
+.btn-ico svg {
+    padding-top: 2px;
+    width: 24px;
+    height: 24px;
+    fill: #222;
+}
+.btn-ico:hover {
+    background: #315258;
+}
+.btn-ico:hover svg {
+    fill: #fff;
+}
+label {
+    display: block;
+    font-weight: 400;
+}
+input, select, textarea {
+    padding: 6px;
+    border: 1px solid #315258;
+    border-radius: 3px;
+    background-color: #fff;
+    font-size: 1rem;
+    outline: none;
+}
+input.error, 
+select.error,
+textarea.error {
+    border-color: #E9573F;
+}
+.text-error {
+    color: #E9573F;
+}
+
+/* 01-03: App layout */
+#root {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+}
+.App {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column wrap;
+    min-height: 100vh;
+    padding: 70px 20px 40px 50px;
+    color: #F5F7FA;
+}
+.App::before {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    background: #111;
+    opacity: 0.7;
+}
+.app-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 70px;
+    z-index: 2000;
+}
+.app-header nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    transition: all .2s ease-in-out;
+}
+.app-header nav.open {
+    background: rgba(0, 0, 0, 0.98);
+    width: 100%;
+    height: 100%;
+    z-index: 2000;
+}
+.main-menu {
+    display: none;
+    height: 100%;
+    list-style: none;
+    text-align: center;
+    font-size: 2rem;
+    transition: all .2s ease-in-out;
+}
+.open .main-menu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.main-menu li {
+    min-width: 60%;
+    margin: 10px;
+}
+.main-menu a {
+    display: block;
+}
+.btn-nav-toggle {
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    width: 40px;
+    height: 40px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+}
+.btn-nav-toggle span,
+.btn-nav-toggle span::before,
+.btn-nav-toggle span::after {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background: #fff;
+    transition: all .2s ease-in-out;
+}
+.btn-nav-toggle span::before,
+.btn-nav-toggle span::after {
+    content: '';
+}
+.btn-nav-toggle span::before{
+    transform: translateY(-10px);
+}
+.btn-nav-toggle span::after{
+    transform: translateY(10px);
+}
+.open .btn-nav-toggle span {
+    background-color: #000;
+    width: 0;
+}
+.open .btn-nav-toggle span::before {
+    transform: translateY(0) rotate(45deg);
+    width: 40px;
+}
+.open .btn-nav-toggle span::after {
+    transform: translateY(-2px) rotate(-45deg);
+    width: 40px;
+}
+
+/* Footer */
+.app-footer {
+    position: fixed;
+    bottom: 10px;
+    left: -20px;
+    display: inline-block;
+    width: auto;
+    height: 30px;
+    transform: rotate(-90deg);
+    transform-origin: 25% 0;
+    color: #AAB2BD;
+    overflow: hidden;
+}
+.content {
+    width: 100%;
+}
+/* HOME */
+.home {
+    margin: 0 auto;
+    text-align: center;
+    text-shadow: 3px 3px 4px #111;
+}
+.home blockquote {
+    width: 50%;
+    margin: 50px auto;
+    color: #AAB2BD;
+}
+.home h1 {
+    font-size: 5rem;
+    margin: 0;
+}
+.home .btn + .btn {
+    margin: 10px;
+}
