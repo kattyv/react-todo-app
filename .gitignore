@@ -22,3 +22,12 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+/src/assets/img/arrow-right.svg
+/src/assets/img/check-mark-black-outline-svgrepo-com.svg
+/src/assets/img/checkbox-svgrepo-com.svg
+/src/assets/img/edit-svgrepo-com.svg
+/src/assets/img/ico-check-outlined.svg
+/src/assets/img/ico-checked.svg
+/src/assets/img/ico-checkmark.svg
+/src/assets/img/ico-delete.svg
+/src/assets/img/ico-edit.svg

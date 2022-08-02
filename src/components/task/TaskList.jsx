@@ -1,30 +1,16 @@
 import React, { useContext, useEffect } from 'react'
 import { TaskContext } from '../../context/TaskContext';
 import { TaskItem } from './TaskItem'
+import todoItems from '../../data.json'
+
 
 export const TaskList = () => {
-    const dataLink = './data.json';
     const { records, setRecords } = useContext(TaskContext);
 
-    const getData = () => {
-        fetch( dataLink, {
-                headers: {
-                    'Content-Type': 'application/json',
-                    'Accept': 'application/json'
-                }
-            }
-        )
-        .then( response => {
-            return response.json();
-        } )
-        .then( jsonData => { 
-            setRecords( jsonData );
-        } )
-    }
-
     useEffect( () => {
-        getData();
-    }, [] )
+        setRecords(todoItems);
+    }, [])
+    
 
     return (
         <section className='list'>

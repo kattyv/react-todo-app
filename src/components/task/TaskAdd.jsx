@@ -87,7 +87,7 @@ export const TaskAdd = () => {
         <form onSubmit={ handleSubmit }>
 
           <p className="text-error">
-            { errors.formError && "Едно или няколко полета не са попълнени." }
+            { errors.formError && "One or more fields are empty." }
           </p>
 
           <label>Task Title</label>
