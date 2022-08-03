@@ -37,8 +37,8 @@ export const About = () => {
 
         <li>
           <strong>Placeholder avatar from: </strong>
-          <a href="" target="_blank" rel="nofollow">
-            Carbon Design Line Icons Vectors
+          <a href="https://pravatar.cc/" target="_blank" rel="nofollow">
+            Pravatar
           </a>
         </li>
       </ol>
